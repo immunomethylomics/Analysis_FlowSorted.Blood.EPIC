@@ -36,7 +36,7 @@ ann_colors = list(CellType=c( CD4T="#D95F02", CD8T ="#7570B3", Bcell="#1B9E77",N
                   Ethnicity=c("African-American"='black', "East-Asian"="firebrick", "Indo-European"="lightgray", Mixed="green"))
 
 #levels(pheno2$CellType)<-c( "CD4T" , "CD8T" , "Bcell", "NK", "Neu" , "Mono" , "MIX"   )
-annotation_row<-data.frame(CellType=phen2o$CellType, Sex=pheno2$Sex, Ethnicity= pheno2$Ethnicity_wide,
+annotation_row<-data.frame(CellType=pheno2$CellType, Sex=pheno2$Sex, Ethnicity= pheno2$Ethnicity_wide,
                            #factor(pheno2$CellType, levels = c( "CD4T" , "CD8T" , "Bcell", "NK", "Neu" , "Mono" , "MIX"   ))
                            row.names = rownames(pheno2))
 pheatmap(getSnpBeta(FlowSorted.Blood.EPIC), annotation_col = annotation_row, show_colnames = F, annotation_colors = ann_colors)
